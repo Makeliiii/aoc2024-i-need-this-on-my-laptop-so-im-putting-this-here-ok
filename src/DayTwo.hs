@@ -11,7 +11,7 @@ pair (x:y:xs) = (x, y) : pair (y:xs)
 one_to_three_in_order :: (Enum a, Num a, Ord a) => (a -> a -> Bool) -> (a, a) -> Bool
 one_to_three_in_order f (x, y) = abs (x - y) `elem` [1 .. 3] && f x y
 
-drop_report :: (Enum a, Num a, Ord a) => [a] -> [[a]]
+drop_report :: [a] -> [[a]]
 drop_report [] = []
 drop_report (x:xs) = xs : map (x:) (drop_report xs)
 
